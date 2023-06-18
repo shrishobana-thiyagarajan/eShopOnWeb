@@ -1,0 +1,95 @@
+Module 03: Implement CI with Azure Pipelines and GitHub Actions 
+
+ 
+
+Configuring Agent Pools and Understanding Pipeline Styles 
+
+ 
+
+Configuring Agent Pools and Understanding Pipeline Styles 
+
+Student lab manual 
+
+Lab requirements 
+
+This lab requires Microsoft Edge or an Azure DevOps supported browser. 
+
+Set up an Azure DevOps organization: If you don’t already have an Azure DevOps organization that you can use for this lab, create one by following the instructions available at Create an organization or project collection. 
+
+Git for Windows download page. This will be installed as part of prerequisites for this lab. 
+
+Visual Studio Code. This will be installed as part of prerequisites for this lab. 
+
+Lab overview 
+
+YAML-based pipelines allow you to fully implement CI/CD as code, in which pipeline definitions reside in the same repository as the code that is part of your Azure DevOps project. YAML-based pipelines support a wide range of features that are part of the classic pipelines, such as pull requests, code reviews, history, branching, and templates. 
+
+Regardless of the choice of the pipeline style, to build your code or deploy your solution by using Azure Pipelines, you need an agent. An agent hosts compute resources that run one job at a time. Jobs can be run directly on the host machine of the agent or in a container. You have an option to run your jobs using Microsoft-hosted agents, which are managed for you, or implementing a self-hosted agent that you set up and manage on your own. 
+
+In this lab, you will learn how to implement and use self-hosted agents with YAML pipelines. 
+
+Objectives 
+
+After you complete this lab, you will be able to: 
+
+Implement YAML-based pipelines. 
+
+Implement self-hosted agents. 
+
+Estimated timing: 45 minutes 
+
+Instructions 
+
+Exercise 0: Configure the lab prerequisites 
+
+In this exercise, you will set up the prerequisite for the lab, which consists of the pre-configured Parts Unlimited team project based on an Azure DevOps Demo Generator template. 
+
+Task 1: Configure the team project 
+
+In this task, you will use Azure DevOps Demo Generator to generate a new project based on the PartsUnlimited template. 
+
+On your lab computer, start a web browser and navigate to Azure DevOps Demo Generator. This utility site will automate the process of creating a new Azure DevOps project within your account that is pre-populated with content (work items, repos, etc.) required for the lab. 
+
+Note: For more information on the site, see https://docs.microsoft.com/azure/devops/demo-gen. 
+
+Click Sign in and sign in using the Microsoft account associated with your Azure DevOps subscription. 
+
+If required, on the Azure DevOps Demo Generator page, click Accept to accept the permission requests for accessing your Azure DevOps subscription. 
+
+On the Create New Project page, in the New Project Name textbox, type Configuring Agent Pools and Understanding Pipeline Styles, in the Select organization dropdown list, select your Azure DevOps organization, and then click Choose template. 
+
+On the Choose a template page, click the PartsUnlimited template, and then click Select Template. 
+
+Click Create Project 
+
+Note: Wait for the process to complete. This should take about 2 minutes. In case the process fails, navigate to your DevOps organization, delete the project, and try again. 
+
+On the Create New Project page, click Navigate to project. 
+
+Exercise 1: Author YAML-based Azure Pipelines 
+
+In this exercise, you will convert a classic Azure Pipeline into a YAML-based one. 
+
+Task 1: Create an Azure DevOps YAML pipeline 
+
+In this task, you will create a template-based Azure DevOps YAML pipeline. 
+
+From the web browser displaying the Azure DevOps portal with the Configuring Agent Pools and Understanding Pipeline Styles project open, in the vertical navigational pane on the left side, click Pipelines. 
+
+On the Recent tab of the Pipelines pane, click New pipeline. 
+
+On the Where is your code? pane, click Azure Repos Git. 
+
+On the Select a repository pane, click PartsUnlimited. 
+
+On the Review your pipeline YAML pane, review the sample pipeline, click the down-facing caret symbol next to the Run button, click Save. 
+
+Exercise 2: Manage Azure DevOps agent pools 
+
+In this exercise, you will implement self-hosted Azure DevOps agent. 
+
+Task 1: Configure an Azure DevOps self-hosting agent 
+
+In this task, you will configure the LOD VM as an Azure DevOps self-hosting agent and use it to run a build pipeline. 
+
+Within the Lab Virtual machine (Lab VM) or your own computer, start a web browser, navigate to the Azure DevOps portal and sign in by using the Microsoft account associated with your Azure DevOps organization. 
